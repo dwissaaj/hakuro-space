@@ -25,11 +25,11 @@ export default function RegisterClient() {
     email: '',
     name: ''
   })
-  const [isProfile, setProfile] = useState({
-    names: '',
-    emails: '',
-    userIds: ''
-  })
+  // const [isProfile, setProfile] = useState({
+  //   names: '',
+  //   emails: '',
+  //   userIds: ''
+  // })
   const [isError, setIsError] = useState({
     isEmailError: false,
     isPasswordError: false,
@@ -58,30 +58,15 @@ export default function RegisterClient() {
       const isVal = await registerSchema.isValid(isData)
       if (isVal == true) {
         try {
-          const user = await account.create(ID.unique(), isData.email, isData.password, isData.name)
+          const user =  await fetch ('/api/user/register',{
+            method : 'POST',
+            body : JSON.stringify(isData)
+          })
      
           console.log('user is', user)
-          if (user) {
-            try {
-              const promise = await database.createDocument(
-                process.env.NEXT_PUBLIC_DATABASE_ID as string,
-                process.env.NEXT_PUBLIC_COLLECTION_ID as string,
-                ID.unique(),
-                {
-                  userId: user.$id,
-                  email: user.email
-                }
-              )
-              console.log('returned', promise)
-              console.log('request data is', isData)
-              if(promise) {
-                router.push('/login')
-              }
-            }
-            catch(error) {
-              console.log(error)
-            }
-          }
+         if(user) {
+          router.push('/login')
+         }
         }
         catch (error: any) {
           setIsError({ ...isError, isLoading: false })
@@ -114,28 +99,28 @@ export default function RegisterClient() {
 
 
   }
-  const registerProfile = async () => {
-    try {
-      console.log('userId is', isProfile.userIds)
+  // const registerProfile = async () => {
+  //   try {
+  //     console.log('userId is', isProfile.userIds)
       
-      console.log('try to register profile', isProfile)
-      const profile = await fetch('/api/user/profile', {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(isProfile)
-      })
-      console.log('return of profile', isProfile)
-      if (profile.status == 201) {
-        router.push('/login')
-      }
+  //     console.log('try to register profile', isProfile)
+  //     const profile = await fetch('/api/user/profile', {
+  //       method: 'POST',
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(isProfile)
+  //     })
+  //     console.log('return of profile', isProfile)
+  //     if (profile.status == 201) {
+  //       router.push('/login')
+  //     }
 
-    }
-    catch (error) {
-      console.log(error)
-    }
-  }
+  //   }
+  //   catch (error) {
+  //     console.log(error)
+  //   }
+  // }
   return (
 
     <div className='p-4 mt:2 w-full flex flex-col items-center gap-4 justify-center'>

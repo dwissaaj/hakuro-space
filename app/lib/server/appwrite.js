@@ -1,7 +1,7 @@
 // src/lib/server/appwrite.js
 import { Client, Account } from "node-appwrite";
 
-
+export {ID} from 'node-appwrite'
 
 export const SESSION_COOKIE = "cookie_session";
 
