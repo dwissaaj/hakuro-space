@@ -15,15 +15,17 @@ export async function POST(request: Request) {
             data.password as string,
             data.name as string
         )
-        const session = await account.createEmailPasswordSession(data.email as string,  data.password as string)
-        console.log(session)
+        const session = await account.createEmailPasswordSession(
+            data.email as string,
+            data.password as string)
+            
         cookies().set("your-presence-here", session.secret, {
             path: "/",
             httpOnly: true,
             sameSite: "strict",
             secure: true,
         })
-        console.log(registration)
+        console.log("Success at Registration ")
         return NextResponse.json({status: 200}, {statusText: 'Success at Registration You can Login Now'})
         
     }

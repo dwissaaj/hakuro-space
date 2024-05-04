@@ -5,8 +5,8 @@ import { EmailIcon } from '../../../components/icon/EmailIcon'
 import { PasswordIcon } from '../../../components/icon/PasswordIcon';
 import { PasswordHideIcon } from '../../../components/icon/PasswordHideIcon';
 import { Input, Button } from '@nextui-org/react'
-import { account } from '@/app/utils/client/appwrite';
 import { useRouter } from 'next/navigation';
+import { log } from 'console';
 
 export default function LoginClient() {
 
@@ -31,68 +31,63 @@ export default function LoginClient() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setIsData({ ...isData, [name]: value })
-   
+
 
   }
   const handleLogin = async () => {
 
-    try {
-      setIsError({...isError, isLoading: true})
-      await loginSchema.validate(isData)
-      const isVal = await loginSchema.isValid(isData)
-      if(isVal == true) {
-        try{
-          const getSession = await account.createEmailSession(isData.email, isData.password)
-           await fetch('/api/user/session',{
-            method: 'POST',
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(getSession)
-          })
-          console.log(getSession)
-          if(getSession) {
-            router.push('/account')
-          }
-        }
-        catch(e: any) {
-          setIsError({...isError, isLoading: false})
-          if(e.code == 404) {
-            setIsError((prev) => ({
-              ...prev,
-              isEmailError: true,
-              emailErrorMessage: 'No Account Detected please register'
-            }))
-          }
-          else if(e.code  == 401) {
-            setIsError((prev) => ({
-              ...prev,
-              isPasswordError: true,
-              passwordErrorMessage: 'Wrong Password or Email please check again'
-            }))
-          }
-          else (
-            setIsError((prev) => ({
-              ...prev,
-              isEmailError: true,
-              passwordErrorMessage: 'Something is wrong try again later'
-            }))
-          )
-        }
-      }
-    }
-    catch(e: any) {
-      console.log(e)
-      setIsError({...isError, isLoading: false})
 
-      if (e.path === 'password') {
-        setIsError({ ...isError, isPasswordError: true, passwordErrorMessage: e.message })
+    setIsError({ ...isError, isLoading: true })
+    await loginSchema.validate(isData)
+    const isVal = await loginSchema.isValid(isData)
+    if (isVal == true) {
+      try {
+        const login = await fetch('/api/user/login', {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(isData)
+        })
+        console.log("logged at", login)
+        console.log("type of", typeof(login))
+        console.log("type", Object.keys(login))
+        if (login['status'] === 200) {
+          router.push('/account')
+        }
+        
+        else if (login['status'] == 404) {
+          setIsError((prev) => ({
+            ...prev,
+            isEmailError: true,
+            isLoading: false,
+            emailErrorMessage: 'No Account Detected please register'
+          }))
+        }
+        else if (login['status'] == 401) {
+          setIsError((prev) => ({
+            ...prev,
+            isPasswordError: true,
+            isLoading: false,
+            passwordErrorMessage: 'Wrong Password or Account please check again'
+          }))
+        }
+
+
       }
-      else if (e.path === 'email') {
-        setIsError({ ...isError, isEmailError: true, emailErrorMessage: e.message })
+      catch (e) {
+        console.log('error at login',e)
+        
       }
-    
+      finally {
+        setIsError((prev) => ({
+          ...prev,
+          isLoading: false,
+        }))
+      }
     }
+
+
   }
   return (
     <div className='p-4 mt:2 w-full flex flex-col items-center gap-4 justify-center'>

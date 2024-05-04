@@ -4,7 +4,6 @@ import { Input, Button } from '@nextui-org/react'
 import { EmailIcon } from '../../../components/icon/EmailIcon'
 import { PasswordIcon } from '../../../components/icon/PasswordIcon';
 import { PasswordHideIcon } from '../../../components/icon/PasswordHideIcon';
-import { account, ID, database } from '@/app/utils/client/appwrite'
 import { object, string } from 'yup';
 import { PersonIcon } from '../../../components/icon/account/PersonIcon';
 import { useRouter } from 'next/navigation';
@@ -62,10 +61,15 @@ export default function RegisterClient() {
             method : 'POST',
             body : JSON.stringify(isData)
           })
-     
-          console.log('user is', user)
          if(user) {
           router.push('/login')
+         }
+         if(!user) {
+          setIsError((prev) => ({
+            ...prev,
+            isNameError: true,
+            nameErrorMessage: 'Something Error'
+          }))
          }
         }
         catch (error: any) {
@@ -79,6 +83,12 @@ export default function RegisterClient() {
             }))
           }
 
+        }
+        finally {
+          setIsError((prev) => ({
+            ...prev,
+            isLoading: false,
+          }))
         }
       }
     }

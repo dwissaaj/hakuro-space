@@ -2,8 +2,6 @@
 import React from 'react'
 import useSWR from 'swr'
 import { request } from 'graphql-request'
-import { account, database } from '@/app/utils/client/appwrite'
-import { getProfile } from '@/app/utils/get-profile'
 import { Tab, Tabs } from '@nextui-org/react'
 import { usePathname } from 'next/navigation'
 import Profile from './profile/clientProfile'

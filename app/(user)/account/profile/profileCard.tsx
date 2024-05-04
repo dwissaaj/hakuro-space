@@ -1,5 +1,4 @@
 'use client'
-import { account, database } from '@/app/utils/client/appwrite'
 import { Snippet } from "@nextui-org/react"
 import { EmailIcon } from '@/app/components/icon/EmailIcon';
 import { PersonIcon } from '@/app/components/icon/account/PersonIcon';
@@ -23,34 +22,7 @@ export default function ProfileCard({ fullName, email, company, occupation,}: pr
         company: '',
         userId: ''
     })
-    const getProfile = () => {
-        try {
-            // const cookies = fetch('/api/user/session') 
-                account.get()
-            .then(data => setUser({...isUser,userId: data.$id}))
-            .catch(err => console.log(err))
-            try {
-                database.getDocument( 
-                    process.env.NEXT_PUBLIC_DATABASE_ID as string,
-                    process.env.NEXT_PUBLIC_COLLECTION_ID as string,
-                    isUser.userId)
-                    .then(data => setUser({...isUser,fullName: data.fullName, email: data.email,
-                    occupation: data.occupation, company: data.company}))
-                    .catch(err => console.log(err))
-            }
-            catch(err) {
-                console.log(err)
-            }
-        }
-        catch(err) {
-            console.log(err)
-        }
-            
-               
-    }
     
-    const { data} = useSWR('/api/user/profile',getProfile)
-    console.log('swrdata', data)
     return (
         <>
         

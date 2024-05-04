@@ -1,7 +1,6 @@
 'use client'
 import React, {useState} from 'react'
 import { Button, Input } from '@nextui-org/react'
-import { ID, database } from '@/app/utils/client/appwrite'
 export default function ModalProfile() {
   const [isData, setIsData] = useState({
     fullName: '',
@@ -15,25 +14,7 @@ export default function ModalProfile() {
    
 
   }
-  const ProfileChange = () => {
-    try {
-      const promise = database.createDocument(
-        process.env.NEXT_PUBLIC_DATABASE_ID as string,
-        process.env.NEXT_PUBLIC_COLLECTION_ID as string,
-        ID.unique(),
-        {
-          fullName: isData.fullName,
-          occupation: isData.occupation,
-          org: isData.org
-        }
-      )
-      console.log('returned', promise)
-      console.log('request data is', isData)
-    }
-    catch(error) {
-      console.log(error)
-    }
-  }
+  
   return (
     <div className='flex flex-col gap-3'>
        <form className='flex flex-col gap-3'>
@@ -73,7 +54,7 @@ export default function ModalProfile() {
          value={isData.org} />
 
        </form>
-       <Button onClick={() => ProfileChange()}>Update</Button>
+       <Button>Update</Button>
     </div>
   )
 }
