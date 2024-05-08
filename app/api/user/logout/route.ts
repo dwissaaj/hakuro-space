@@ -1,15 +1,21 @@
-import { account } from "@/app/utils/client/appwrite";
+
+import { createAdminClient } from "@/app/lib/server/appwrite";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
 
-export async function GET() {
-    const cookiesStore = cookies()
+export async function DELETE() {
+    const {account} = await  createAdminClient()
     try {
-        const removeCookies = cookiesStore.delete('userId')
-        console.log(removeCookies)
-        return NextResponse.json({statusCode: 204},{statusText: 'Delete Logout User'})
+        const logOut = await account.deleteSession('current')
+        
+        if(logOut) {
+            redirect('/')
+        }
+        return NextResponse.json({status: 200}, {statusText: 'Redirect'})
     }
     catch(err) {
-        return NextResponse.json({statusCode: 400}, {statusText: 'Error at Log Out User'})
+        console.log("Error when user logout")
+        return NextResponse.json({status: 400}, {statusText: 'Error at Logout'})
     }
 }

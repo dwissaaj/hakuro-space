@@ -1,11 +1,13 @@
-import { ID, account, database } from '@/app/utils/client/appwrite'
+
+import { databaseAdmin, ID } from '@/app/lib/server/appwrite'
 import { Permission, Role } from 'appwrite'
 import { NextResponse } from 'next/server'
 export async function POST(request: Request){
     const res = await request.json()
+    
     console.log('try to register profile in api', res)
     try {
-        const data =  await database.createDocument(
+        const data =  (await databaseAdmin()).database.createDocument(
             process.env.NEXT_PUBLIC_DATABASE_ID as string,
             process.env.NEXT_PUBLIC_COLLECTION_ID as string,
             ID.unique(),
@@ -33,24 +35,3 @@ export async function POST(request: Request){
     }
 }
 
-export async function GET() {
-    try {
-        const user = await database.getDocument( process.env.NEXT_PUBLIC_DATABASE_ID as string,
-            process.env.NEXT_PUBLIC_COLLECTION_ID as string,
-            '65d98eda2a5c47f833df')
-            .then(user => console.log('log in user api', user))
-            .then(user => {
-                return NextResponse.json({user})
-            })
-            .then((res) => {
-                return res
-            })
-            .catch(error => console.log(error))
-    return NextResponse.json({user})
-      
-    }
-    
-    catch(error) {
-        console.log(error)
-    }
-}

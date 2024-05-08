@@ -1,4 +1,4 @@
-import { ID, createAdminClient } from "@/app/lib/server/appwrite";
+import { ID, createAdminClient, databaseAdmin } from "@/app/lib/server/appwrite";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -26,6 +26,7 @@ export async function POST(request: Request) {
             secure: true,
         })
         console.log("Success at Registration ")
+    
         return NextResponse.json({status: 200}, {statusText: 'Success at Registration You can Login Now'})
         
     }

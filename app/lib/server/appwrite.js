@@ -1,6 +1,6 @@
 // src/lib/server/appwrite.js
 
-import { Client, Account } from "node-appwrite";
+import { Client, Account, Databases } from "node-appwrite";
 import { cookies } from "next/headers"
 export {ID} from 'node-appwrite'
 
@@ -41,4 +41,16 @@ export async function createAdminClient() {
   };
 }
 
-// session client
+// DB Server
+
+export async function databaseAdmin() {
+  const client = new Client()
+    .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
+    .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
+    .setKey(process.env.NEXT_PUBLIC_SET_KEY); 
+  const database = new Databases(client)
+  
+  return {
+   database
+  }
+}
