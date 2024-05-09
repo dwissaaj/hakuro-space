@@ -1,5 +1,4 @@
 'use client'
-import { account } from '@/app/utils/client/appwrite'
 import { Button } from '@nextui-org/react'
 import React, { useState } from 'react'
 

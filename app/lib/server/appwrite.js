@@ -54,3 +54,17 @@ export async function databaseAdmin() {
    database
   }
 }
+
+// session handler user
+export async function sessionHandler() {
+  const cookiesSession = cookies().get("your-presence-here")
+  const client = new Client()
+    .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
+    .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
+    .setSession(`${cookiesSession}`)
+  
+    const sessions = new Account(client)
+  return {
+    sessions
+  };
+}

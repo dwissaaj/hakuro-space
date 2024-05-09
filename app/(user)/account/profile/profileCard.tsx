@@ -6,8 +6,6 @@ import { AgeIcon } from '@/app/components/icon/account/AgeIcon';
 import { JobIcon } from '@/app/components/icon/account/JobIcon';
 import { NameIcon } from '@/app/components/icon/account/NameIcon'
 import { useState } from 'react';
-import useSWR from 'swr';
-import { Databases, Models } from 'appwrite';
 type profile = {
     fullName: string,
     email: string,
