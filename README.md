@@ -1,4 +1,4 @@
-# Newest Kisetsu Personal Website
+# Newest Hakuro Tech Personal Website
 
 The reason I build this to showcase my skill in communication science graduate. Also because 
 to prevent stealing all my design and content
@@ -13,13 +13,13 @@ Next js, Supabase and Prisma
 ## UI Framework
 
 ```
-Tailwind css, Next UI and React Storybook
+Tailwind css, Next UI, Rive
 
 ```
 
 ## Server
 
 ```
-Vercel and Supabase
+Vercel and Supabase probably Appwrite
 
 ```
