@@ -3,6 +3,7 @@ import { Dropdown, DropdownMenu, DropdownTrigger, DropdownItem, Button, Dropdown
 import { PersonIcon } from "@/app/components/icon/account/PersonIcon"
 import { LogoutIcon } from "@/app/components/icon/account/LogoutIcon"
 export default function MdSubMenuAccount() {
+ 
     return (
         <Dropdown>
             <DropdownTrigger>
@@ -15,9 +16,7 @@ export default function MdSubMenuAccount() {
                     <DropdownItem endContent={<PersonIcon className="size-2 lg:size-4" />}>
                         Your Account
                     </DropdownItem>
-                    <DropdownItem color="danger" description="Out From Account" endContent={<LogoutIcon className="size-2 lg:size-4 " />}>
-                        Log out
-                    </DropdownItem>
+                   
                 </DropdownSection>
             </DropdownMenu>
         </Dropdown>

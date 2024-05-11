@@ -4,8 +4,7 @@ import { Input, Button } from '@nextui-org/react'
 import { EmailIcon } from '../../../components/icon/EmailIcon'
 import { PasswordIcon } from '../../../components/icon/PasswordIcon';
 import { PasswordHideIcon } from '../../../components/icon/PasswordHideIcon';
-import { account, ID } from '@/app/appwrite'
-import {  object, string } from 'yup';
+import { object, string } from 'yup';
 import { PersonIcon } from '../../../components/icon/account/PersonIcon';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -25,6 +24,11 @@ export default function RegisterClient() {
     email: '',
     name: ''
   })
+  // const [isProfile, setProfile] = useState({
+  //   names: '',
+  //   emails: '',
+  //   userIds: ''
+  // })
   const [isError, setIsError] = useState({
     isEmailError: false,
     isPasswordError: false,
@@ -38,6 +42,7 @@ export default function RegisterClient() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
+
     setIsData({ ...isData, [name]: value })
 
 
@@ -45,36 +50,51 @@ export default function RegisterClient() {
 
   const register = async () => {
     console.log('Try to Register....')
-    
+
     try {
-      setIsError({...isError, isLoading: true})
-      const user = await registerSchema.validate(isData)
+      setIsError({ ...isError, isLoading: true })
+      await registerSchema.validate(isData)
       const isVal = await registerSchema.isValid(isData)
       if (isVal == true) {
         try {
-          const user = await account.create(ID.unique(), isData.email, isData.password, isData.name)
-          if(user) {
-            router.push('/login')
-          }
-
+          const user =  await fetch ('/api/user/register',{
+            method : 'POST',
+            body : JSON.stringify(isData)
+          })
+         if(user) {
+          router.push('/login')
+         }
+         if(!user) {
+          setIsError((prev) => ({
+            ...prev,
+            isNameError: true,
+            nameErrorMessage: 'Something Error'
+          }))
+         }
         }
         catch (error: any) {
-          setIsError({...isError, isLoading: false})
+          setIsError({ ...isError, isLoading: false })
           console.log(error)
-          if(error.code === 409) {
+          if (error.code === 409) {
             setIsError((prev) => ({
               ...prev,
               isNameError: true,
               nameErrorMessage: 'You Have an Account Please Login'
             }))
           }
-          
+
+        }
+        finally {
+          setIsError((prev) => ({
+            ...prev,
+            isLoading: false,
+          }))
         }
       }
     }
     catch (e: any) {
       console.log(e)
-      setIsError({...isError, isLoading: false})
+      setIsError({ ...isError, isLoading: false })
 
       if (e.path === 'password') {
         setIsError({ ...isError, isPasswordError: true, passwordErrorMessage: e.message })
@@ -86,10 +106,31 @@ export default function RegisterClient() {
         setIsError({ ...isError, isNameError: true, nameErrorMessage: e.message })
       }
     }
-   
+
 
   }
+  // const registerProfile = async () => {
+  //   try {
+  //     console.log('userId is', isProfile.userIds)
+      
+  //     console.log('try to register profile', isProfile)
+  //     const profile = await fetch('/api/user/profile', {
+  //       method: 'POST',
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(isProfile)
+  //     })
+  //     console.log('return of profile', isProfile)
+  //     if (profile.status == 201) {
+  //       router.push('/login')
+  //     }
 
+  //   }
+  //   catch (error) {
+  //     console.log(error)
+  //   }
+  // }
   return (
 
     <div className='p-4 mt:2 w-full flex flex-col items-center gap-4 justify-center'>
@@ -168,11 +209,11 @@ export default function RegisterClient() {
             </Button>
           </form>
           <p>Already have an Account? <Link className='hover:text-secondary-500' href='/login'> Login Here</Link></p>
-         
+
         </div>
-        
+
       </div>
-     
+
     </div>
 
   )

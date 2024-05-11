@@ -1,8 +1,11 @@
+
+import React from 'react'
+import CallBackVerify from './verifyC'
 import { Metadata } from 'next'
-import RegisterClient from '@/app/(user)/(auth)/register/RegisterC';
+
 
 export const metadata: Metadata = {
-    title: 'Sign Up | Kisetsu ',
+    title: 'Thanks From Kisetsu ',
     description: 'Kisetsu Tech Dwi Aji Personal Website',
     applicationName: 'Kisetsu Sakura App ',
     referrer: 'origin-when-cross-origin',
@@ -14,15 +17,14 @@ export const metadata: Metadata = {
   
   }
 
-
-
-export default async function Page() {
-  
-  
-  
-  
+export default function page() {
+    
   return (
-    <RegisterClient />
-    )
+    
+      
+        
+            <CallBackVerify />
+        
+    
+  )
 }
-
