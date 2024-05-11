@@ -1,21 +1,30 @@
 
-import { createAdminClient } from "@/app/lib/server/appwrite";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
-
+import { Client, Account } from "node-appwrite";
 export async function DELETE() {
-    const {account} = await  createAdminClient()
+
+    const cookieStore = cookies()
+    const session = cookieStore.get('your-presence-here')?.value
+
+    const client = new Client()
+                .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT as string)
+                .setProject(process.env.NEXT_PUBLIC_SET_PROJECT as string)
+                .setSession(`${session}`);
+
+    const account = new Account(client);
     try {
         const logOut = await account.deleteSession('current')
         
         if(logOut) {
             redirect('/')
         }
-        return NextResponse.json({status: 200}, {statusText: 'Redirect'})
+        console.log("user log out", logOut)
+        return NextResponse.json({status: 200})
     }
     catch(err) {
-        console.log("Error when user logout")
+        console.log("Error when user logout",err)
         return NextResponse.json({status: 400}, {statusText: 'Error at Logout'})
     }
 }

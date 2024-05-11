@@ -1,40 +1,21 @@
 "use client"
-import { useDisclosure, Modal, ModalBody, ModalFooter, Button, Card, CardBody, CardFooter, CardHeader, Image, Snippet, ModalContent, ModalHeader, Code } from '@nextui-org/react'
-
+import { Card, CardBody, CardHeader, Code } from '@nextui-org/react'
+import Link from 'next/link'
 import useSWR from "swr"
 import axios from 'axios'
-import Link from 'next/link'
 
 
-function VerificationEmailUser(isVerified: boolean) {
-    if (isVerified === true) {
-        return (
-            <Code color='success'>Verified</Code>
-        )
-    }
-
-    return (
-        <div className='flex flex-col gap-2 items-center'>
-            <Code color='danger'>Not Verified</Code>
-            <Code color='secondary'>
-            <Link href={"/account/verification"}>Verify Now</Link>
-            </Code>
-        </div>
-    )
-
-
-}
 export default function User() {
-    const fetcher = url => axios.get(url).then(res => res.data)
-    const { data, error } = useSWR('/api/user/user', fetcher)
-    console.log("current user", data)
+    const fetcher = (url: string) => axios.get(url).then(res => res.data)
+    const { data } = useSWR('/api/user/user', fetcher)
+
 
 
     return (
         <div className='w-full flex justify-center items-center'>
-            <div className='w-1/2'>
-                <Card className='h-full w-full'>
-                    <CardHeader className='w-full text-center'>Your Account</CardHeader>
+            <div className='w-3/4'>
+                <Card className='h-full w-full text-center items-center justify-center'>
+                    <CardHeader className='text-2xl text-center'>Your Account</CardHeader>
                     <CardBody className='flex flex-col gap-4 items-center'>
                         <div className='flex flex-col items-center'>
                             <p>Your ID</p>
@@ -46,14 +27,25 @@ export default function User() {
                         </div>
                         <div className='flex flex-col items-center'>
                             <p>Join Us at</p>
-                            <Code>{data?.created.substring(0, 10)}</Code>
+                            <Code>{data?.created}</Code>
                         </div>
                         <div className='flex flex-col gap-4'>
                             <div className='flex flex-col items-center'>
                                 <p>Email Verification</p>
-                                <VerificationEmailUser isVerified={data?.verification} />
+                                {
+                                    data?.verification ?
+                                        <Code color='success'>Verified</Code>
+
+                                        :
+                                        <div className='flex flex-col gap-2 items-center'>
+                                            <Code color='danger'>Not Verified</Code>
+                                            <Code color='secondary'>
+                                                <Link href={"/account/verification"}>Verify Now</Link>
+                                            </Code>
+                                        </div>
+                                }
                             </div>
-                            
+
                         </div>
                     </CardBody>
                 </Card>

@@ -1,6 +1,6 @@
-import { createAdminClient, sessionHandler } from "@/app/lib/server/appwrite";
+
 import { NextResponse } from "next/server";
-import { Client, Account, Databases } from "node-appwrite";
+import { Client, Account } from "node-appwrite";
 import { cookies } from 'next/headers'
 export async function GET(){
     const cookieStore = cookies()
@@ -22,8 +22,6 @@ export async function GET(){
             verification: userCurrent.emailVerification
 
         }
-        console.log(userData)
-
         return NextResponse.json(userData)
     }
     catch(err) {

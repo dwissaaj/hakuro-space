@@ -1,10 +1,7 @@
 'use client'
 import React from 'react'
-import useSWR from 'swr'
-import { request } from 'graphql-request'
 import { Tab, Tabs } from '@nextui-org/react'
-import { usePathname } from 'next/navigation'
-import Profile from './profile/clientProfile'
+import Profile from './(profile)/clientProfile'
 import SignOut from './signout/clientSignOut'
 import User from './user/clientUser'
 export default function ClientAccunt() {

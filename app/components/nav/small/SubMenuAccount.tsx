@@ -1,14 +1,31 @@
 'use client'
-import { ListboxSection, SelectItem, Select, Listbox, ListboxItem } from "@nextui-org/react";
+import { ListboxSection, SelectItem, Select, Listbox, ListboxItem,  } from "@nextui-org/react";
 import { LanguageIcon } from "@/app/components/icon/account/LanguageIcon";
 import { LogoutIcon } from "@/app/components/icon/account/LogoutIcon";
 import { PersonIcon } from "@/app/components/icon/account/PersonIcon";
+import {  useRouter } from "next/navigation";
 export default function SubMenuAccount() {
+    const router = useRouter()
+    const signOut = async () => {
+        try {
+          const signOut = await fetch('/api/user/logout',
+            {method: 'DELETE'}
+          )
+          if(signOut['status'] === 200) {
+            router.push('/')
+          }
+    
+    
+        }
+        catch(err){
+          console.log(err)
+        }
+      }
     return (
-        <Listbox disabledKeys={["account"]} aria-label="Listbox data"
+        <Listbox aria-label="Listbox data"
             variant="flat" color="primary" >
             <ListboxSection title="Your Privacy" showDivider>
-                <ListboxItem startContent={<PersonIcon className="size-2 lg:size-4" />} href="" key="account">
+                <ListboxItem startContent={<PersonIcon className="size-2 lg:size-4" />} href="/account" key="account">
                     Your Account
                 </ListboxItem >
                 <ListboxItem startContent={<LanguageIcon className="size-2 lg:size-4" />} href="" key="language">
@@ -26,11 +43,7 @@ export default function SubMenuAccount() {
                     </Select>
                 </ListboxItem >
             </ListboxSection>
-            <ListboxSection title="Connect" showDivider>
-                <ListboxItem description="Log Out" startContent={<LogoutIcon className="size-2 lg:size-4" />} href="" color="danger" key="power bi">
-                    Log Out
-                </ListboxItem >
-            </ListboxSection>
+            
         </Listbox>
     )
 }

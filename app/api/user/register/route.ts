@@ -1,6 +1,5 @@
-import { ID, createAdminClient, databaseAdmin } from "@/app/lib/server/appwrite";
+import { ID, createAdminClient } from "@/app/lib/server/appwrite";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 import { NextResponse } from "next/server";
 
