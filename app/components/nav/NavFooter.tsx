@@ -10,12 +10,12 @@ export default function NavFooter() {
       <div className="w-full flex justify-center ">
         <div className="flex flex-col">
         <div>
-          <p className="text-xl">Kisetsu Tech</p>
+          <p className="text-xl">Hakuro Tech</p>
         </div>
         <div className="flex h-5 items-center space-x-4 text-small">
         <Link isDisabled color="foreground" href="">{year}</Link>
           <Divider orientation="vertical" />
-          <Link color="foreground" href="https://sakamichi.online/">Japan</Link>
+          <Link color="foreground" href="https://sakamichi.cloud/">Japan</Link>
           <Divider orientation="vertical" />
           <Link isDisabled color="foreground" >Blog</Link>
         </div>

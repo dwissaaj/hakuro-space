@@ -7,7 +7,7 @@ import MenuBurger from "@/app/components/nav/MenuBurger";
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarItem, Link } from "@nextui-org/react";
 import {  useState } from "react";
 import { ThemeSwitcher } from "@/app/components/ThemeSwitcher";
-import { KisetsuLogo } from "@/app/components/brand/KisetsuLogo";
+import { HakuroLogo } from "@/app/components/brand/HakuroLogo";
 import InputUI from "@/app/components/input/Input";
 import { SixThemeSwitcher } from "../sixThemeSwitcher";
 export default function Navigations() {
@@ -24,10 +24,10 @@ export default function Navigations() {
         />
         <NavbarBrand>
           <div className="hidden md:flex  space-x-4">
-          <KisetsuLogo  />
+          <HakuroLogo  />
           </div>
           <Link href="/" className="font-bold text-inherit">
-          KISETSU
+          HAKURO
           </Link>
       
         </NavbarBrand>
