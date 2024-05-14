@@ -11,8 +11,9 @@ export default function LoadingOnigiri() {
   });
     useEffect(() => {
     if (rive) {
-      console.log("Rive text was initially: ", rive.getTextRunValue("Run 1"))
-      rive.setTextRunValue("Run 1", "New Text!!")
+      console.log("Rive text was initially: ", rive.getTextRunValue("LabelText"))
+      rive.setTextRunValue("LabelText", "Nice to meet you - Onigiri");
+    
     }
   }, [rive]);
   return (
