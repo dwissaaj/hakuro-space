@@ -5,7 +5,7 @@ export default function HomeTitle() {
     <div className="flex flex-col gap-2">
         <div>
           <h1 className={`text-3xl lg:text-6xl`}> DWI SETYO AJI</h1>
-          <p className="">New Version of Kisetsu Tech Built with</p>
+          <p className="">New Version of Hakuro Tech Built with</p>
          <div className=''>
          <Button>
           <input type='file' style={{opacity: 0}} />

@@ -8,11 +8,11 @@ export default function ClientAccunt() {
 
   return (
     <div className='w-full h-lvh flex flex-col mt-8 mb-42 items-center'>
-      <Tabs color='primary' variant='bordered' aria-label='options account'>
+      <Tabs  color='primary' variant='bordered' aria-label='options account'>
       <Tab className='w-3/4 h-full' key={'user'}  title='Account'>
           <User />
         </Tab>
-        <Tab className='w-3/4 h-full' key={'account'}  title='Profile'>
+        <Tab isDisabled className='w-3/4 h-full' key={'profile'}  title='Profile'>
           <Profile />
         </Tab>
         <Tab className='w-3/4  h-full' key={'signout'} title='Sign Out' >
