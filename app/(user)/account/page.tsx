@@ -20,13 +20,9 @@ export default async function Account() {
 
   return (
     <div>
-      <div className='bg-red-500'>
+    
         <ClientAccunt />
-      </div>
-      <div className='bg-blue-400 w-92 h-92'>
-        <LoadingOnigiri />
-<p>sdfd</p>
-      </div>
+
     </div>
 
 
