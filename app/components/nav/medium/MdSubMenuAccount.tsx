@@ -13,7 +13,7 @@ export default function MdSubMenuAccount() {
             </DropdownTrigger>
             <DropdownMenu color="primary" variant="light" aria-label="dropdown menu">
                 <DropdownSection title="Setting Yours" showDivider>
-                    <DropdownItem endContent={<PersonIcon className="size-2 lg:size-4" />}>
+                    <DropdownItem href="/account" endContent={<PersonIcon className="size-2 lg:size-4" />}>
                         Your Account
                     </DropdownItem>
                    

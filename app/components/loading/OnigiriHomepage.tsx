@@ -1,12 +1,12 @@
 'use client'
-import { useRive } from '@rive-app/react-canvas';
+import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import { useEffect } from 'react';
-export default function LoadingOnigiri() {
+export default function HomepageOnigiri() {
   const { rive, RiveComponent } = useRive({
     src: '/onigiri.riv',
     stateMachines: "waiting",
     autoplay: true,
-    artboard: 'Onigiri',
+    artboard: 'Onigiri Ikura',
 
   });
     useEffect(() => {
@@ -16,9 +16,10 @@ export default function LoadingOnigiri() {
     
     }
   }, [rive]);
+
   return (
     <RiveComponent
-      
+    
     />
   );
 }
