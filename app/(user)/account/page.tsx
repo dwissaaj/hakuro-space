@@ -1,7 +1,7 @@
 import React from 'react'
 import ClientAccunt from './clientAccount'
 import { Metadata } from 'next'
-import LoadingOnigiri from '@/app/components/loading/loadingOnigiri'
+import LoadingOnigiri from '@/app/components/loading/OnigiriHomepage'
 
 export const metadata: Metadata = {
   title: 'Your Account ',
