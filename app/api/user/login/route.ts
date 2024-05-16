@@ -13,7 +13,6 @@ export async function POST(request: Request) {
             data.email as string,
             data.password as string)
             
-        
         cookies().set("your-presence-here", session.secret, {
             path: "/",
             httpOnly: true,

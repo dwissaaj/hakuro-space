@@ -18,6 +18,7 @@ export async function DELETE() {
         const logOut = await account.deleteSession('current')
         
         if(logOut) {
+            cookieStore.delete('your-presence-here')
             redirect('/')
         }
         console.log("user log out", logOut)
