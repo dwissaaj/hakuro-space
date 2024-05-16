@@ -12,7 +12,7 @@ export async function POST() {
     const account = new Account(client);
     try {
         
-        const verify = await account.createVerification("http://localhost:3000/account/thanks")
+        const verify = await account.createVerification(`${process.env.NEXT_DOMAIN}/account/thanks`)
         console.log("verify", verify)
         return NextResponse.json({verify})
     }
