@@ -208,7 +208,7 @@ export default function RegisterClient() {
               Sign Up
             </Button>
           </form>
-          <p>Already have an Account? <Link className='hover:text-secondary-500' href='/login'> Login Here</Link></p>
+          <p>Already have an Account? <Link className='hover:text-secondary-500 hover:underline' href='/login'> Login Here</Link></p>
 
         </div>
 

@@ -6,8 +6,7 @@ import { PasswordIcon } from '../../../components/icon/PasswordIcon';
 import { PasswordHideIcon } from '../../../components/icon/PasswordHideIcon';
 import { Input, Button } from '@nextui-org/react'
 import { useRouter } from 'next/navigation';
-import { log } from 'console';
-
+import Link from 'next/link';
 export default function LoginClient() {
 
   const [isVisible, setIsVisible] = useState(false);
@@ -150,7 +149,9 @@ export default function LoginClient() {
 
 
         </div>
-
+          <div className='mt-8'>
+          <p>First Time Go here? <Link className='hover:text-secondary-500 hover:underline' href='/login'> Register Here</Link></p>
+          </div>
       </div>
 
     </div>
