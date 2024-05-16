@@ -11,32 +11,33 @@ export default function VerificationC() {
     const sendVerify = async () => {
         try {
             setisState({ ...isState, isLoading: true })
-            const promise = await fetch("/api/user/verification", {
+            await fetch("/api/user/verification", {
                 method: 'POST'
             })
-            console.log('success at send verification', promise)
+            console.log('success at send verification')
             setisState({ ...isState, isLoading: false, isDisabled: true, isTextShow: true })
         }
         catch (error) {
             console.log('error at send verify', error)
         }
-        finally{
-            setisState({ ...isState, isLoading: false, isDisabled: true })
-        }
+        
         
     }
     return (
         <div className='w-full h-screen flex flex-col items-center justify-center'>
             <div>
+                <h1 className='text-2xl text-secondary'>Confirmation Url Will be Send to Your Email</h1>
+            </div>
+            <div>
                 <div className='mt-8 text-lg'>
-                    <Button isDisabled={isState.isDisabled} isLoading={isState.isLoading} onClick={() => sendVerify()} className='w-full' variant='solid' color='primary'>Send Please</Button>
+                    <Button isDisabled={isState.isDisabled} isLoading={isState.isLoading} onClick={() => sendVerify()} className='w-full' variant='solid' color='primary'>Send It!!</Button>
                 </div>
                 <div>
                     {
                         isState.isTextShow ? (
-                            <h1>Check Your Email for Confirmation</h1>
+                            <h1 className='italic mt-8 text-primary'>Send It! Just Click The Url</h1>
                         ) : (
-                            <h1>Send It</h1>
+                            <h1 className='italic mt-8 text-primary'>Did You Know Onigiri Using Rice?</h1>
                         )
                     }
                 </div>
