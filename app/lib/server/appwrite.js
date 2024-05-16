@@ -32,7 +32,7 @@ export async function createAdminClient() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
     .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
-    .setKey(process.env.SET_KEY); 
+    .setKey(process.env.NEXT_APPWRITE_KEY); 
 
   return {
     get account() {
@@ -58,7 +58,7 @@ export async function databaseAdmin() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
     .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
-    .setKey(process.env.SET_KEY); 
+    .setKey(process.env.NEXT_APPWRITE_KEY); 
   const database = new Databases(client)
   
   return {

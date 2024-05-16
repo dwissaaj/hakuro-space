@@ -9,10 +9,10 @@ export async function GET(){
     const client = new Client()
                 .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT as string)
                 .setProject(process.env.NEXT_PUBLIC_SET_PROJECT as string)
-                .setSession(`${session}`);
+                .setSession(`${session}` as string);
 
     const account = new Account(client);
-
+    console.log(session)
     try {
         const userCurrent =  await account.get()
         let userData = {
@@ -26,6 +26,6 @@ export async function GET(){
     }
     catch(err) {
         console.log("Error at fetching user", err)
-        return NextResponse.json({status: 400}, {statusText: "Error at fetching user"})
+        return NextResponse.json({status: 401}, {statusText: "Error at fetching user"})
     }
 }
