@@ -9,10 +9,9 @@ export async function GET(){
     const client = new Client()
                 .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT as string)
                 .setProject(process.env.NEXT_PUBLIC_SET_PROJECT as string)
-                .setSession(`${session}` as string);
+                .setSession(`${session}`);
 
     const account = new Account(client);
-    console.log(session)
     try {
         const userCurrent =  await account.get()
         let userData = {

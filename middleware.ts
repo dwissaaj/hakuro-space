@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
     const currentUser = request.cookies.get('your-presence-here')
-    console.log('Checking Auth In Middleware')
     if(currentUser) {
         return NextResponse.next()
     }

@@ -150,7 +150,7 @@ export default function LoginClient() {
 
         </div>
           <div className='mt-8'>
-          <p>First Time Go here? <Link className='hover:text-secondary-500 hover:underline' href='/login'> Register Here</Link></p>
+          <p>First Time Go here? <Link className='hover:text-secondary-500 hover:underline' href='/register'> Register Here</Link></p>
           </div>
       </div>
 
