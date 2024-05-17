@@ -89,7 +89,7 @@ export default function LoginClient() {
 
   }
   return (
-    <div className='p-4 mt:2 w-full flex flex-col items-center gap-4 justify-center'>
+    <div className='p-4 mt:2 flex flex-col items-center gap-4 justify-center'>
       <div className='text-center '>
         <h1 className='text-2xl lg:text-5xl'>Login To Your Account</h1>
 

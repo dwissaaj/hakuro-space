@@ -3,6 +3,7 @@ import LoginClient from './LoginC'
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { getLoggedInUser } from '@/app/lib/auth/loginState'
+import KaitenSushi from '@/app/tesp/kaiten'
 export const metadata: Metadata = {
   title: 'Login | Hakuro ',
   description: 'Hakuro Tech Dwi Aji Personal Website',
@@ -24,9 +25,18 @@ export default async function Page() {
 
 
   return (
-    <>
-      <LoginClient />
-    </>
+    <div className='min-w-screen min-h-screen'>
+      <div className='w-full h-screen flex flex-col lg:flex-row items-center'>
+          <div className='w-full '>
+            <LoginClient />
+          </div>
+          <div className='w-full'>
+            <div className='w-[600px] h-[600px]'>
+              <KaitenSushi />
+            </div>
+          </div>
+      </div>
+    </div>
   )
 }
 
