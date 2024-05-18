@@ -1,12 +1,12 @@
 'use client'
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import { useEffect } from 'react';
-export default function LoadingSushi() {
+export default function KaitenOnigiri() {
   const { rive, RiveComponent } = useRive({
     src: '/onigiri.riv',
-    stateMachines: "waiting",
+    stateMachines: "rolling",
     autoplay: true,
-    artboard: 'Sushi',
+    artboard: 'Kaiten Onigiri',
     
   });
  

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import RegisterClient from '@/app/(user)/(auth)/register/RegisterC';
+import PlateSushi from '@/app/components/rive/plateSushi';
 
 export const metadata: Metadata = {
     title: 'Sign Up | Hakuro ',
@@ -22,7 +23,19 @@ export default async function Page() {
   
   
   return (
-    <RegisterClient />
+    <div className='minh-screen min-w-screen'>
+      <div className='w-full h-full gap-3 flex flex-col lg:flex-row'>
+        <div className='w-full flex justify-center items-center'>
+        <RegisterClient />
+        </div>
+        <div className='w-full flex justify-center items-center'>
+          <div className=''>
+          <PlateSushi />
+          </div>
+        </div>
+      </div>
+      
+    </div>
     )
 }
 

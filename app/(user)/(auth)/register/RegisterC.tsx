@@ -109,28 +109,7 @@ export default function RegisterClient() {
 
 
   }
-  // const registerProfile = async () => {
-  //   try {
-  //     console.log('userId is', isProfile.userIds)
-      
-  //     console.log('try to register profile', isProfile)
-  //     const profile = await fetch('/api/user/profile', {
-  //       method: 'POST',
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(isProfile)
-  //     })
-  //     console.log('return of profile', isProfile)
-  //     if (profile.status == 201) {
-  //       router.push('/login')
-  //     }
-
-  //   }
-  //   catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+ 
   return (
 
     <div className='p-4 mt:2 w-full flex flex-col items-center gap-4 justify-center'>
