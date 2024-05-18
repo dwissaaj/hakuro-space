@@ -3,6 +3,7 @@ import LoginClient from './LoginC'
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { getLoggedInUser } from '@/app/lib/auth/loginState'
+import WelcomeSushi from '@/app/components/rive/welcomeSushi'
 export const metadata: Metadata = {
   title: 'Login | Hakuro ',
   description: 'Hakuro Tech Dwi Aji Personal Website',
@@ -24,9 +25,19 @@ export default async function Page() {
 
 
   return (
-    <>
-      <LoginClient />
-    </>
+    <div className='minh-screen min-w-screen'>
+      <div className='w-full h-full gap-3 flex flex-col lg:flex-row'>
+        <div className='w-full flex justify-center items-center'>
+        <LoginClient />
+        </div>
+        <div className='w-full flex justify-center items-center'>
+          <div className='w-[500px] h-[500px] w-[750px] h-[750px]'>
+          <WelcomeSushi />
+          </div>
+        </div>
+      </div>
+      
+    </div>
   )
 }
 

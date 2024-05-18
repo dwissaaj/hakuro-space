@@ -1,6 +1,7 @@
  import { Metadata } from "next";
 import LoadingOnigiri from "./components/loading/OnigiriHomepage";
 import { Link } from "@nextui-org/react";
+import KaitenOnigiri from "./components/rive/kaitenOnigiri";
 
 
 export const metadata: Metadata = {
@@ -16,17 +17,15 @@ export const metadata: Metadata = {
 }
 export default function App() {
   return (
-    <main className="flex flex-col items-center justify-center w-screen h-screen gap-4">
+    <main className="mt-8 flex flex-col items-center justify-center w-screen h-screen gap-4">
       <div className="flex flex-col gap-2 text-4xl text-center">
-        <h1>This Animation built with Rive</h1>
+        <p>This Animation built with <Link className="text-4xl underline"  href="https://rive.app/">Rive</Link></p>
         <h1>このアニメーションRIVE作りますた</h1>
       </div>
-      <div className="w-1/2 h-1/2">
-      <LoadingOnigiri />
+      <div className="w-full h-1/2">
+      <KaitenOnigiri />
       </div>
-      <div>
-        <p>Check Rive <Link href="https://rive.app/">Webpage</Link></p>
-      </div>
+      
     </main>
   );
 }

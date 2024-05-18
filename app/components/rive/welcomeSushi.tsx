@@ -1,7 +1,7 @@
 'use client'
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import { useEffect } from 'react';
-export default function HomepageOnigiri() {
+export default function WelcomeSushi() {
   const { rive, RiveComponent } = useRive({
     src: '/onigiri.riv',
     stateMachines: "waiting",
