@@ -29,7 +29,8 @@ export default async function Page() {
         <RegisterClient />
         </div>
         <div className='w-full flex justify-center items-center'>
-          <div className=''>
+          <div className='flex flex-col items-center'>
+            <p>Hover to plate to rotate</p>
           <PlateSushi />
           </div>
         </div>
