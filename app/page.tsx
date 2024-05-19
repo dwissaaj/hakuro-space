@@ -1,5 +1,4 @@
  import { Metadata } from "next";
-import LoadingOnigiri from "./components/loading/OnigiriHomepage";
 import { Link } from "@nextui-org/react";
 import KaitenOnigiri from "./components/rive/kaitenOnigiri";
 
