@@ -22,7 +22,7 @@ export default function page() {
         <div className='flex flex-col'>
           <div className='flex flex-col gap-0 p-2'>
             <h1 className='m-0 font-roboto'>Blogs</h1>
-            <p className='text-sm font-raleway'>All is my writing, still build in markdown if I have free time will update to use Elysia. Categorize with a few genre, will update soon</p>
+            <p className='text-sm font-raleway'>All is my writing, still build in markdown if I have free time will update to use Elysia. Categorize with a few genre with multi Interesting post inside it, will update soon</p>
           </div>
           <div>
             <div className='flex flex-col gap-3'>
