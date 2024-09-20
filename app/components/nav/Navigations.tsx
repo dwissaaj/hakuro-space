@@ -35,9 +35,9 @@ export default function Navigations() {
       </NavbarContent>
 
       <NavbarContent className="md:flex gap-4 " justify="center">
-        <NavbarItem>
+        {/* <NavbarItem>
           <InputUI />
-        </NavbarItem>
+        </NavbarItem> */}
         <div className="hidden md:flex gap-3">
         
         <NavbarItem>

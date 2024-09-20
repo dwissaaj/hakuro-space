@@ -1,7 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { SunIcon, MoonIcon } from '@radix-ui/react-icons'
 import { Button , Dropdown, DropdownTrigger, DropdownItem, DropdownMenu} from "@nextui-org/react";
 import { FallIcon } from "./icon/theme/fallIcon";
 import { SummerIcon } from "./icon/theme/summerIcon";
@@ -9,6 +8,10 @@ import { DarkIcon } from "./icon/theme/darkIcon";
 import { LightIcon } from "./icon/theme/lightIcon";
 import { WinterIcon } from "./icon/theme/winterIcon";
 import { SpringIcon } from "./icon/theme/springIcon";
+import Season from "./icon/logo/season";
+
+
+
 export function SixThemeSwitcher() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
@@ -23,9 +26,10 @@ export function SixThemeSwitcher() {
     <Dropdown closeOnSelect={false}>
     <DropdownTrigger>
       <Button 
-        variant="bordered" 
+        variant="bordered" size="sm"
       >
-        Theme
+        <Season />
+      
       </Button>
     </DropdownTrigger>
     <DropdownMenu aria-label="Static Actions">
