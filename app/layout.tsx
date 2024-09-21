@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${roboto.variable} ${raleway.variable}`}>
-      <body >
+    <html lang="en" className={`${roboto.variable} ${raleway.variable} w-full`}>
+      <body className="w-full">
      
           <Providers>
             <Navigations />

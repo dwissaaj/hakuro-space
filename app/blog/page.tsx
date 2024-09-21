@@ -1,7 +1,5 @@
 import React from 'react'
 import { Metadata } from 'next'
-import GenreCard from './genreCard'
-import codingPics from '@/public/blog/coding.png'
 import { Card, CardFooter, Image, Button, Link, CardHeader, CardBody } from "@nextui-org/react";
 export const metadata: Metadata = {
   title: 'Blogs Hakuro',
@@ -17,15 +15,16 @@ export const metadata: Metadata = {
 }
 export default function page() {
   return (
-    <div className='w-screen flex items-center justify-center m-4 font-raleway'>
-      <div className='w-full lg:w-3/4 border rounded-3xl border-2xl backdrop-blur-3xl p-6 bg-slate-100/10'>
-        <div className='flex flex-col'>
+    <div className='w-screen m-0 p-0 flex items-center justify-center font-raleway bg-red-500'>
+      <div className='w-3/4 flex items-center justify-center'>
+        <div className=''>
+        <div className='flex flex-col '>
           <div className='flex flex-col gap-0 p-2'>
             <h1 className='m-0 font-roboto'>Blogs</h1>
             <p className='text-sm font-raleway'>All is my writing, still build in markdown if I have free time will update to use Elysia. Categorize with a few genre with multi Interesting post inside it, will update soon</p>
           </div>
-          <div>
-            <div className='flex flex-col gap-3'>
+          <div className=''>
+            <div className='grid grid-cols-1 lg:grid-cols-4 gap-3'>
               <div>
                 <Card className='w-full gap-0 bg-slate-100/10 border-2 border-slate-100/40 shadow-md shadow-slate-500 rounded-xl '>
                   <CardHeader>
@@ -44,7 +43,7 @@ export default function page() {
               <div className=''>
                 <Card className='w-full gap-0 bg-slate-100/10 border-2 border-slate-100/40 shadow-md shadow-slate-500 rounded-xl '>
                   <CardHeader>
-                    <Image className='w-full' src='/blog/photography.png' />
+                    <Image className='w-full' src='/blog/photography.jpg' />
                   </CardHeader>
                   <CardBody className='flex flex-col gap-2  font-raleway'>
                     <p className='text-xl lg:text-3xl font-bold'>Photography</p>
@@ -65,7 +64,7 @@ export default function page() {
                   <Image
                     alt="japan image"
                     className="object-cover  p-0 m-0"
-                    src="/blog/japan.png"
+                    src="/blog/japan.jpg"
                     width={1200}
                     height={800}
                   />
@@ -87,7 +86,7 @@ export default function page() {
                     alt="japan image"
                     className="object-cover p-0 m-0"
 
-                    src="/blog/japan.png"
+                    src="/blog/japan.jpg"
 
                   />
                   <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
@@ -110,7 +109,7 @@ export default function page() {
                   <Image
                     alt="Data office image"
                     className="object-cover  p-0 m-0"
-                    src="/blog/data.png"
+                    src="/blog/data.jpg"
                     width={1200}
                     height={800}
                   />
@@ -131,7 +130,7 @@ export default function page() {
                   <Image
                     alt="data image"
                     className="object-cover p-0 m-0"
-                    src="/blog/data.png"
+                    src="/blog/data.jpg"
                   />
                   <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                     <p className="text-tiny text-white/80">Solve Business Problem</p>
@@ -144,6 +143,7 @@ export default function page() {
             </div>
 
           </div>
+        </div>
         </div>
 
       </div>
