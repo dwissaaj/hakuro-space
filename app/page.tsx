@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 }
 export default function App() {
   return (
-    <main className="mt-8 flex flex-col items-center justify-center w-screen h-screen gap-4">
+    <main className="mt-8 flex flex-col items-center justify-center w-full h-screen gap-4">
       <div className="flex flex-col gap-2 text-4xl text-center">
         <p>This Animation built with <Link className="text-4xl underline"  href="https://rive.app/">Rive</Link></p>
         <h1>このアニメーションRIVE作りますた</h1>

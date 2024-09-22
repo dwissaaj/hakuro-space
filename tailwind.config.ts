@@ -16,10 +16,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        raleway: ['var(--font-raleway)'],
+        roboto: ['var(--font-roboto)'],
+      }
     },
   },
   darkMode: "class",
-  plugins: [nextui({
+  plugins: [require('@tailwindcss/typography'),nextui({
     themes: {
       light: {
         colors: {
