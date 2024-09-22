@@ -15,7 +15,7 @@ interface CodingCard {
 export default function CodingCard({ altImg,source, headline,subHeadline,link,style, styleHeadline, styleSubHeadline} : CodingCard) {
     return (
     
-        <Card isBlurred  className={`${style}`}>
+        <Card isBlurred  className={`${style} shadow-[-7px_6px_60px_-5px_rgba(255,255,255,0.3)]`}>
             <Link className='hover:-translate-y-1 transition ease-in-out col-span-12 sm:col-span-4 h-[300px] ' href={`${link}`}>
             <CardHeader className='absolute z-10 top-1  flex-col !items-start'>
                 <div className=''>
