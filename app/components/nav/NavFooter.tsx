@@ -6,14 +6,15 @@ export default function NavFooter() {
   let year = date.getFullYear()
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="w-full flex justify-center ">
+  
+      <div className="w-full flex justify-center relative
+       bottom-0 my-4">
         <div className="flex flex-col">
         <div>
           <p className="text-xl">Hakuro Tech</p>
         </div>
-        <div className="flex h-5 items-center space-x-4 text-small">
-        <Link isDisabled color="foreground" href="">{year}</Link>
+        <div className="flex items-center space-x-4 border-b-2 text-white">
+        <Link color="foreground" href="/">{year}</Link>
           <Divider orientation="vertical" />
           <Link color="foreground" href="https://sakamichi.cloud/">Japan</Link>
           <Divider orientation="vertical" />
@@ -21,6 +22,6 @@ export default function NavFooter() {
         </div>
         </div>
       </div>
-    </div>
+    
   );
 }

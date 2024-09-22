@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { Card, CardFooter, Image, Button, Link, CardHeader, CardBody } from "@nextui-org/react";
+import CardBlog from './cardblog';
 export const metadata: Metadata = {
   title: 'Blogs Hakuro',
   description: 'Hakuro Tech Dwi Aji Personal Website',
@@ -15,140 +16,55 @@ export const metadata: Metadata = {
 }
 export default function page() {
   return (
-    <div className='w-screen m-0 p-0 flex items-center justify-center font-raleway bg-red-500'>
-      <div className='w-3/4 flex items-center justify-center'>
-        <div className=''>
-        <div className='flex flex-col '>
-          <div className='flex flex-col gap-0 p-2'>
-            <h1 className='m-0 font-roboto'>Blogs</h1>
-            <p className='text-sm font-raleway'>All is my writing, still build in markdown if I have free time will update to use Elysia. Categorize with a few genre with multi Interesting post inside it, will update soon</p>
-          </div>
-          <div className=''>
-            <div className='grid grid-cols-1 lg:grid-cols-4 gap-3'>
-              <div>
-                <Card className='w-full gap-0 bg-slate-100/10 border-2 border-slate-100/40 shadow-md shadow-slate-500 rounded-xl '>
-                  <CardHeader>
-                    <Image className='w-full' src='/blog/coding.png' />
-                  </CardHeader>
-                  <CardBody className='flex flex-col gap-2  font-raleway'>
-                    <p className='text-xl lg:text-3xl font-bold'>Coding</p>
-                    <p>Not have much experience as professional, but here I am writing down all my mistakes.
-                      Discover the ups and downs of learning to code. From beginner mishaps to breakthroughs, follow along as I share lessons, gear, tech stack I learned through trial and error.</p>
-                  </CardBody>
-                  <CardFooter>
-                    <Link color='primary' href='/blog/coding'>Find Interesting Post</Link>
-                  </CardFooter>
-                </Card>
-              </div>
-              <div className=''>
-                <Card className='w-full gap-0 bg-slate-100/10 border-2 border-slate-100/40 shadow-md shadow-slate-500 rounded-xl '>
-                  <CardHeader>
-                    <Image className='w-full' src='/blog/photography.jpg' />
-                  </CardHeader>
-                  <CardBody className='flex flex-col gap-2  font-raleway'>
-                    <p className='text-xl lg:text-3xl font-bold'>Photography</p>
-                    <p>Just a camera, some good light, and a lot of trial and error.
-                      I am learning as I go, figuring out how to capture those perfect shots. Sharing the messy, fun, and sometimes surprising moments behind the lens!</p>
-                  </CardBody>
-                  <CardFooter>
-                    <Link color='primary' href='/blog/photography'>Read Now</Link>
-                  </CardFooter>
-                </Card>
-              </div>
-              <div className='hidden md:block'>
-                <Card
-                  isFooterBlurred
-                  radius="lg"
-                  className="border shadow-md shadow-slate-500 w-full  p-0 m-0 bg-slate-100/10"
-                >
-                  <Image
-                    alt="japan image"
-                    className="object-cover  p-0 m-0"
-                    src="/blog/japan.jpg"
-                    width={1200}
-                    height={800}
-                  />
-                  <CardFooter className="mt-8 justify-between before:bg-slate-100/10 border-white/20 border-1 overflow-hidden absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                    <p className="text-tiny lg:text-sm text-white/80">Learning the language, loving the culture, and probably making a ton of mistakes. 坂道グルプ大好き男です。</p>
-                    <Button className="text-tiny lg:text-sm text-white bg-black/20 font-raleway" variant="flat" color="default" radius="lg" size="sm">
-                      Coming Soon
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-              <div className='md:hidden'>
-                <Card
-                  isFooterBlurred
-                  radius="lg"
-                  className="border-none"
-                >
-                  <Image
-                    alt="japan image"
-                    className="object-cover p-0 m-0"
-
-                    src="/blog/japan.jpg"
-
-                  />
-                  <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                    <p className="text-tiny text-white/80">坂道グルプ大好き男です</p>
-                    <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-                      Coming soon
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-
-
-
-              <div className='hidden md:block'>
-                <Card
-                  isFooterBlurred
-                  radius="lg"
-                  className="border shadow-md shadow-slate-500 w-full  p-0 m-0 bg-slate-100/10"
-                >
-                  <Image
-                    alt="Data office image"
-                    className="object-cover  p-0 m-0"
-                    src="/blog/data.jpg"
-                    width={1200}
-                    height={800}
-                  />
-                  <CardFooter className="mt-8 justify-between before:bg-slate-100/10 border-white/20 border-1 overflow-hidden absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                    <p className="text-tiny lg:text-sm text-white/80">Crunching numbers, finding patterns using Text Processing powered by Machine Learning, resulting amazing report for business problem.</p>
-                    <Button className="text-tiny lg:text-sm text-white bg-black/20 font-raleway" variant="flat" color="default" radius="lg" size="sm">
-                    Ongoing
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-              <div className='md:hidden'>
-                <Card
-                  isFooterBlurred
-                  radius="lg"
-                  className="border-none"
-                >
-                  <Image
-                    alt="data image"
-                    className="object-cover p-0 m-0"
-                    src="/blog/data.jpg"
-                  />
-                  <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                    <p className="text-tiny text-white/80">Solve Business Problem</p>
-                    <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-                      Ongoing
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-            </div>
-
-          </div>
+    <div className='w-screen font-raleway p-4'>
+      <div className='w-full flex flex-col items-center justify-center '>
+        <div className='flex flex-col justify-center items-center'>
+          <p className='text-2xl lg:text-4xl text-center border-b-2 border-slate-500 text-white/80 font-bold'>Topics </p>
+          <p className='text-red-500 text-3xl uppercase text-center'>Still on Development</p>
+          <p className='text-tiny lg:text-lg text-white'>Talking wide range of topic that I have work or something that I want to talk about</p>
         </div>
-        </div>
-
       </div>
+      <div className='grid grid-cols-12 gap-4 justify-items-center'>
 
+        <CardBlog altImg='photography' source='/blog/photography.jpg' cardStyle='col-span-12 lg:col-span-3' headline='Photography' content='Explore the world one shot at a time with me while capturing the beauty, emotion, and stories hidden in any moments.' />
+        <CardBlog altImg='coding' source='/blog/coding.jpg' cardStyle='col-span-12 lg:col-span-3' headline='Code' content='Not A CS Graduate but I love code. All my mistakes, suggestion, and experience is written in here.' />
+        <Card
+          isFooterBlurred
+          className="  col-span-12 lg:col-span-3 border-2 border-black shadow-[-7px_6px_30px_-5px_rgba(255,255,255,0.3)]"
+        >
+          <Image
+            alt="data pics"
+            className="object-cover w-full h-full p-0 m-0"
+            removeWrapper
+            src="/blog/japan.jpg"
 
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 h-1/4">
+            <p className="text-tiny text-white/80">Learn Japanese, 坂道グループ大好きです</p>
+            <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+              もうすぐ
+            </Button>
+          </CardFooter>
+        </Card>
+        <Card
+          isFooterBlurred
+          className="  col-span-12 lg:col-span-3 border-2 border-black shadow-[-7px_6px_30px_-5px_rgba(255,255,255,0.3)]"
+        >
+          <Image
+            alt="data pics"
+            className="object-cover w-full h-full p-0 m-0"
+            removeWrapper
+            src="/blog/data.jpg"
+
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden  absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 h-1/4">
+            <p className="text-tiny text-white/80">Text processing, analyst & report for business</p>
+            <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+              Soon
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
     </div>
   )
 }

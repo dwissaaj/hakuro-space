@@ -8,7 +8,8 @@ import { DarkIcon } from "./icon/theme/darkIcon";
 import { LightIcon } from "./icon/theme/lightIcon";
 import { WinterIcon } from "./icon/theme/winterIcon";
 import { SpringIcon } from "./icon/theme/springIcon";
-import Season from "./icon/logo/season";
+import SeasonSwitcher from "./icon/logo/Season";
+
 
 
 
@@ -28,28 +29,22 @@ export function SixThemeSwitcher() {
       <Button 
         variant="bordered" size="sm"
       >
-        <Season />
+       <SeasonSwitcher />
       
       </Button>
     </DropdownTrigger>
     <DropdownMenu aria-label="Static Actions">
-      <DropdownItem key="fall">
-        <Button size="sm" color="secondary" onClick={() => setTheme('fall')} endContent={<FallIcon />} fullWidth={true} variant="ghost">Fall</Button>
-      </DropdownItem>
-      <DropdownItem key="summer">
-        <Button size="sm" color="secondary" onClick={() => setTheme('summer')} endContent={<SummerIcon />} fullWidth={true} variant="ghost">Summer</Button>
-      </DropdownItem>
+      
+      
       <DropdownItem key="winter">
         <Button size="sm" color="secondary" onClick={() => setTheme('winter')} endContent={<WinterIcon />} fullWidth={true} variant="ghost">Winter</Button>
       </DropdownItem>
-      <DropdownItem key="spring">
-        <Button size="sm" color="secondary" onClick={() => setTheme('spring')} endContent={<SpringIcon />} fullWidth={true} variant="ghost">Spring</Button>
-      </DropdownItem>
+      
       <DropdownItem key="dark">
         <Button size="sm" color="secondary" onClick={() => setTheme('dark')} endContent={<DarkIcon />} fullWidth={true} variant="ghost">Dark</Button>
       </DropdownItem>
       <DropdownItem key="light">
-        <Button size="sm" color="secondary" onClick={() => setTheme('light')} endContent={<LightIcon />} fullWidth={true} variant="ghost">Light</Button>
+        <Button size="sm" color="secondary" onClick={() => setTheme('light')} endContent={<LightIcon />} fullWidth={true} variant="ghost">Light Summer</Button>
       </DropdownItem>
     </DropdownMenu >
     </Dropdown>
