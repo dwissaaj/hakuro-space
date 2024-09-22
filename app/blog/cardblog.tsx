@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardFooter, Image, Button, Link, CardHeader, CardBody } from "@nextui-org/react";
+import { Card, CardFooter, Image, CardHeader, CardBody } from "@nextui-org/react";
 interface CardBlog {
 cardStyle: string,
 headline: string,

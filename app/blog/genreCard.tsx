@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticImageData } from 'next/image';
-import { Card, CardFooter, Image, Button, Link, CardHeader, CardBody } from "@nextui-org/react";
+import { Card, CardFooter, Image, Link, CardHeader, CardBody } from "@nextui-org/react";
 type genreCard = {
     size: "sm" | "lg" | "none" | "md",
     imageAlt: string | StaticImageData,

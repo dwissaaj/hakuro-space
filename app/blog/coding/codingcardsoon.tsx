@@ -1,7 +1,6 @@
 import React from 'react'
-import { Card, CardHeader, Image, CardFooter, Button, CardBody } from '@nextui-org/react'
-import Link from 'next/link'
-import { subtle } from 'crypto'
+import { Card, CardHeader, Image, CardFooter, Button } from '@nextui-org/react'
+
 
 interface CodingCardSoon {
     source: string,
