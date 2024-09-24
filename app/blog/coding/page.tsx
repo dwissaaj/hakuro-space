@@ -1,6 +1,19 @@
 import React from 'react'
 import CodingCard from './codingcard'
 import CodingCardSoon from './codingcardsoon'
+import { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Coding Category',
+  description: 'Hakuro Tech Dwi Aji Personal Website Blog Content Coding Category',
+  applicationName: 'Hakuro Sakura App ',
+  referrer: 'origin-when-cross-origin',
+  keywords: ['Dwis Aji', 'Front End Developer', 'Indonesia', 'Japan', 'Data Analyst', 'UI/UX Designer'],
+  authors: [{ name: 'Dwis Aji' }, { name: 'Dwis Aji', url: 'https://hakuro.tech' }],
+  creator: 'Dwis Aji',
+  publisher: 'Dwis Aji',
+
+
+}
 export default function page() {
   return (
     <div className='w-screen font-raleway mt-8 flex items-center justify-center'>

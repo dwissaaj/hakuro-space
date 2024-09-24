@@ -1,4 +1,5 @@
 import { Spinner } from "@nextui-org/react";
+import RamenLoader from "./components/rive/ramenLoading";
 
 
 export default function Loading() {
@@ -6,7 +7,7 @@ export default function Loading() {
         <div className="h-screen w-full flex flex-cols justify-center ">
           
                 <div className="flex items-center">
-                    <Spinner size="lg" label="Wait A Minute" color="secondary" />
+                    <RamenLoader />
                 </div>
            
         </div>
