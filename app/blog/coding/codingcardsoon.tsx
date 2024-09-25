@@ -22,7 +22,7 @@ export default function CodingCardSoon({ altImg, source, headline, subtitle, sty
                 className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
                 src={source}
             />
-            <CardFooter className="absolute  bottom-0 border-zinc-100/50 z-10 justify-between">
+            <CardFooter className="absolute bottom-0 border-zinc-100/50 z-10 justify-between">
                 <div>
                     <p className="text-black text-tiny text-white font-bold text-tiny shadow-2xl shadow-slate-800">{subtitle}</p>
                 </div>
