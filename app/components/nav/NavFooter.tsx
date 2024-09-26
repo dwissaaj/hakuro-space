@@ -18,7 +18,7 @@ export default function NavFooter() {
           <Divider orientation="vertical" />
           <Link color="foreground" href="https://sakamichi.cloud/">Japan</Link>
           <Divider orientation="vertical" />
-          <Link href="blog" color="foreground" >Blog</Link>
+          <Link href="/blog" color="foreground" >Blog</Link>
         </div>
         </div>
       </div>

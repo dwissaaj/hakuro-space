@@ -13,8 +13,9 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "trees-cute" : "url('/blog/photo/trees.png')",
+        "trees-cutes" : "url('/trees.png')"
       },
       fontFamily: {
         raleway: ['var(--font-raleway)'],

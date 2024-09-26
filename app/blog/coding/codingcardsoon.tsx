@@ -1,7 +1,6 @@
 import React from 'react'
-import { Card, CardHeader, Image, CardFooter, Button, CardBody } from '@nextui-org/react'
-import Link from 'next/link'
-import { subtle } from 'crypto'
+import { Card, CardHeader, Image, CardFooter, Button } from '@nextui-org/react'
+
 
 interface CodingCardSoon {
     source: string,
@@ -23,7 +22,7 @@ export default function CodingCardSoon({ altImg, source, headline, subtitle, sty
                 className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
                 src={source}
             />
-            <CardFooter className="absolute  bottom-0 border-zinc-100/50 z-10 justify-between">
+            <CardFooter className="absolute bottom-0 border-zinc-100/50 z-10 justify-between">
                 <div>
                     <p className="text-black text-tiny text-white font-bold text-tiny shadow-2xl shadow-slate-800">{subtitle}</p>
                 </div>
