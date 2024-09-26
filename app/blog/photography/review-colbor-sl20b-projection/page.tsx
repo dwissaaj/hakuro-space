@@ -17,10 +17,8 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div>CodingBasic
-      <article >
-      <Welcome />
-      </article>
+    <div className='w-screen p-2'>
+      <p className='w-full text-7xl text-white'>on development</p>
     </div>
   )
 }

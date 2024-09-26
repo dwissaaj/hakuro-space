@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 }
 export default function page() {
   return (
-    <div className='w-screen font-raleway flex items-center justify-center  overflow-x-hidden mb-20'>
-      <div className='w-full lg:w-3/4 flex flex-col items-center justify-center '>
+    <div className='h-screen font-raleway '>
+      <div className='w-full  flex flex-col items-center justify-center '>
 
         <div className=''>
           <div className='w-full h-full  text-center'>
@@ -27,7 +27,7 @@ export default function page() {
           <div className='w-full grid grid-cols-12 gap-4 p-2'>
           <Card isPressable shadow="lg" className='col-span-12 lg:col-span-3 p-0 m-0 border-2 border-gray-700 hover:-translate-y-1 transition ease-in-out hover:text-primary
             '>
-              <Link href='/' className='flex flex-col '>
+              <Link href='/blog/coding' className='flex flex-col '>
                 <CardBody className=" p-0 m-0">
                   <Image shadow="sm"
                     radius="lg"
@@ -36,13 +36,13 @@ export default function page() {
                     src='/blog/coding.jpg' />
                 </CardBody>
                 <CardFooter className="bg-black/10 flex flex-col gap-2 my-2 ">
-                  <Link href='/' className='p-0 m-0 text-white/70 font-bold '>CODING</Link>
+                  <p  className='p-0 m-0 text-white/70 font-bold '>CODING</p>
                   <p className='p-0 m-0 text-sm lg:text-md text-white'>Not a CS graduate but I love this.</p>
                 </CardFooter></Link>
             </Card>
             <Card isPressable shadow="lg" className='col-span-12 lg:col-span-3 p-0 m-0 border-2 border-gray-700 hover:-translate-y-1 transition ease-in-out hover:text-primary
             '>
-              <Link href='/' className='flex flex-col '>
+              <Link href='/blog/photography' className='flex flex-col '>
                 <CardBody className=" p-0 m-0">
                   <Image shadow="sm"
                     radius="lg"
@@ -51,7 +51,7 @@ export default function page() {
                     src='/blog/photography.jpg' />
                 </CardBody>
                 <CardFooter className="bg-black/10 flex flex-col gap-2 my-2 ">
-                  <Link href='/' className='p-0 m-0 text-white/70 font-bold '>PHOTOGRAPHY</Link>
+                  <p className='p-0 m-0 text-white/70 font-bold '>PHOTOGRAPHY</p>
                   <p className='p-0 m-0 text-sm lg:text-md text-white'>Artistic side of me.</p>
                 </CardFooter></Link>
             </Card>

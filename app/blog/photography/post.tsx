@@ -1,16 +1,30 @@
 import React from 'react'
-import { Button, Card, CardBody, CardFooter, CardHeader, Image, Link } from '@nextui-org/react'
-export default function Post() {
+import { Card, CardBody, User, CardFooter, CardHeader, Image } from '@nextui-org/react'
+interface postType {
+    src: string,
+    altImg: string,
+    desc: string,
+    caption: string
+}
+export default function Post(props: postType) {
     return (
-        <Card>
-            <CardHeader>
-                <p>asds</p>
+        <Card shadow='lg' className='font-raleway max-w-[72 min-h-[510px]  max-h-[510px] p-0 m-0 '> 
+            <CardHeader className=''>
+                <User
+                    name="Dwis Aji"
+                    description={props.desc}
+                    avatarProps={{
+                        src: "/blog/photo/gallery/avatar.jpeg",
+                        radius: 'sm',
+                        isBordered: true,
+                    }}
+                />
             </CardHeader>
-            <CardBody>
-
+            <CardBody className='w-full h-full p-0 m-0 '>
+            <Image loading='eager' radius='none' className='w-full  object-cover p-0 m-0' alt={props.altImg} src={props.src} />
             </CardBody>
-            <CardFooter>
-                <p>I think this is</p>
+            <CardFooter className='h-full w-full p-2 '>
+                <p className='font-light text-tiny lg:text-md text-ellipsis overflow-hidden'>{props.caption}</p>
             </CardFooter>
         </Card>
 
