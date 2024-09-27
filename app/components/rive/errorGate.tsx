@@ -6,7 +6,7 @@ export default function ErrorGate() {
     stateMachines: "erroractive",
     artboard: 'Error',
     autoplay: true,
-    animations: 'Error code'
+    animations: 'Error'
 
   });
   
