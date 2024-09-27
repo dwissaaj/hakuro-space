@@ -16,7 +16,7 @@ export default function Navigations() {
 
 
   return (
-    <Navbar maxWidth="2xl" isBordered className="py-4" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar  shouldHideOnScroll position="static" maxWidth="2xl" isBordered className="py-4" onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

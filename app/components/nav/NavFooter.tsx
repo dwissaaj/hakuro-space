@@ -1,6 +1,7 @@
 import React from "react";
 import { Divider } from "@nextui-org/react";
-import { Link } from "@nextui-org/react";
+import Link from "next/link";
+
 export default function NavFooter() {
   const date = new Date()
   let year = date.getFullYear()
