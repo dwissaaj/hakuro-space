@@ -12,7 +12,7 @@ export default function GalleryFeed() {
     
       
   if(isLoading) {
-    return <Spinner label='Hold On A Second' />
+    return <Spinner size='lg' label='Hold On A Second' />
   }
   return  (
     <div className='flex flex-row gap-4 p-1'>

@@ -9,7 +9,7 @@ export interface feedCardType {
 }
 export default function FeedCard(props: feedCardType) {
     return (
-        <Card shadow='lg' className='font-raleway max-w-72 min-h-[550px] max-h-[550px] p-0 m-0 '> 
+        <Card key={props.unique} shadow='lg' className='font-raleway max-w-72 min-h-[550px] max-h-[550px] p-0 m-0 '> 
             <CardHeader className='min-h-12 max-h-12 p-2 m-2'>
                 <User
                     name="Dwis Aji"

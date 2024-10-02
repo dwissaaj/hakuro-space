@@ -25,6 +25,7 @@ export default async function Page() {
         <div>
           <div>
             <p className='text-xl lg:text-5xl text-white font-bold'>Gallery</p>
+            <p className='text-white font-regular text-md lg:text-xl'>A bunch of image I create in my free time</p>
           </div>
 
           <div className='w-full h-full '>
@@ -34,7 +35,7 @@ export default async function Page() {
         </div>
           <div>
             <p className='text-2xl lg:text-5xl text-white font-bold'>Resource Center</p>
-            <p className='text-white font-regular text-md lg:text-xl'>Telling stories, show my mistakes and capture moments, Still on Development</p>
+            <p className='text-white font-regular text-md lg:text-xl'>Telling stories, show my mistakes and capture moments. For now using markdown as base will update soon</p>
           </div>
           <div className='w-full flex flex-row gap-2'>
             <div>
@@ -43,7 +44,7 @@ export default async function Page() {
             </div>
             <div>
               <Feed src='/blog/photo/resource/colbor cl60.png' title='Real World Testing Colbor CL60R' date='01 October 2024' tag='Lighting'
-                altImg='Colbor Pics' desc='Colbor SL20B need use Colbor CL60R for source of ligh, but is it also a good lighting?' link='/blog/photography/review-colbor-sl20b-projection' />
+                altImg='Colbor Pics' desc='Colbor SL20B need use Colbor CL60R for source of ligh, but is it also a good lighting?' link='/blog/photography/review-colbor-cl60r-rgb-light' />
             </div>
           </div>
         </div>
