@@ -2,9 +2,8 @@
 import axios from 'axios'
 import React from 'react'
 import useSWR from 'swr'
-import FeedCard, { feedCardType } from './feedCard'
 import { Spinner } from '@nextui-org/react'
-useSWR
+import FeedCard, {feedCardType} from './feedCard'
 export default function GalleryFeed() {
    
     const fetcher = (url: string) => axios.get(url).then(res => res.data)
@@ -15,7 +14,7 @@ export default function GalleryFeed() {
     return <Spinner size='lg' label='Hold On A Second' />
   }
   return  (
-    <div className='flex flex-row gap-4 p-1'>
+    <div className='grid grid-cols-1 md:grid-cols-3  lg:grid-cols-6 gap-4 p-1 '>
         
         {
           data?.documents?.map((feeds: feedCardType) => 

@@ -15,13 +15,13 @@ import React from 'react'
 export default function BlogCard(props: FeedType) {
   return (
 
-    <div className='max-w-80 max-h-[600px] m-2 bg-black/50 border border-white/40 overflow-hidden hover:-translate-y-1 transition ease-in-out'>
+    <div className='w-80 bg min-h-[500px] max-h-[500px] m-2 bg-black/50 border border-white/40 overflow-hidden hover:-translate-y-1 transition ease-in-out '>
       <div>
         <Card
           isFooterBlurred
           radius='none'
           shadow='lg'
-          className="border-none p-0 m-0"
+          className="border-none p-0 m-0 "
         >
           <CardHeader className='p-0 m-0'>
             <Image
@@ -45,16 +45,16 @@ export default function BlogCard(props: FeedType) {
           </CardFooter>
         </Card>
       </div>
-      <div className='min-h-full p-2 flex flex-col  gap-2 '>
-       <div>
+      <div className='h-full grid grid-rows-12   '>
+       <div className='row-span-2'>
        < p className='text-white font-bold text-md lg:text-lg p-0 m-0 '>{props.title}</p>
        </div>
-        <div>
+        <div className='row-span-8'>
         <p className='text-white font-light text-sm p-0 m-0 text-ellipsis overflow-hidden'>
           {props.desc}
         </p>
         </div>
-        <div>
+        <div className='row-span-2 px-2'>
         <Link color='primary' className=' p-0 m-0' showAnchorIcon href={props.link}>Read it</Link>
         </div>
       </div>
