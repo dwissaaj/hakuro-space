@@ -1,15 +1,16 @@
 import React from 'react'
 import { Card, CardBody, User, CardFooter, CardHeader, Image } from '@nextui-org/react'
-interface postType {
+export interface feedCardType {
     src: string,
     altImg: string,
     desc: string,
     caption: string
+    unique?: number 
 }
-export default function Post(props: postType) {
+export default function FeedCard(props: feedCardType) {
     return (
-        <Card shadow='lg' className='font-raleway max-w-[72 min-h-[510px]  max-h-[510px] p-0 m-0 '> 
-            <CardHeader className=''>
+        <Card shadow='lg' className='font-raleway max-w-72 min-h-[550px] max-h-[550px] p-0 m-0 '> 
+            <CardHeader className='min-h-12 max-h-12 p-2 m-2'>
                 <User
                     name="Dwis Aji"
                     description={props.desc}
@@ -21,10 +22,10 @@ export default function Post(props: postType) {
                 />
             </CardHeader>
             <CardBody className='w-full h-full p-0 m-0 '>
-            <Image loading='eager' radius='none' className='w-full  object-cover p-0 m-0' alt={props.altImg} src={props.src} />
+            <Image loading='eager' radius='none' className='w-full h-full object-cover p-0 m-0 ' alt={props.altImg} src={props.src} />
             </CardBody>
-            <CardFooter className='h-full w-full p-2 '>
-                <p className='font-light text-tiny lg:text-md text-ellipsis overflow-hidden'>{props.caption}</p>
+            <CardFooter className='min-h-28 max-h-28 m-0 p-0 flex items-start justify-start  '>
+                <p className='p-2 m-0 font-light text-tiny lg:text-md overflow-hidden overflow-ellipsis '>{props.caption}</p>
             </CardFooter>
         </Card>
 

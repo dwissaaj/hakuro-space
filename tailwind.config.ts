@@ -17,6 +17,10 @@ const config: Config = {
         "trees-cute" : "url('/blog/photo/trees.png')",
         "trees-cutes" : "url('/trees.png')"
       },
+      height: {
+        '128' : '510px',
+        '130' : '544px'
+      },
       fontFamily: {
         raleway: ['var(--font-raleway)'],
         roboto: ['var(--font-roboto)'],

@@ -91,3 +91,15 @@ export async function AccountHandler() {
      accountHandler
     }
 }
+
+export async function DatabaseHandler() {
+  const client = new Client()
+    .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
+    .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
+    .setKey(process.env.NEXT_APPWRITE_KEY);
+  const databaseHandle = new Databases(client)
+ 
+  return {
+    databaseHandle
+  }
+}

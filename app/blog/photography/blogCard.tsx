@@ -1,3 +1,4 @@
+'use client'
 import { Card, Image, CardFooter, CardHeader, Button, Link } from '@nextui-org/react'
 
 interface FeedType {
@@ -11,7 +12,7 @@ interface FeedType {
   
 }
 import React from 'react'
-export default function Feed(props: FeedType) {
+export default function BlogCard(props: FeedType) {
   return (
 
     <div className='max-w-80 max-h-[600px] m-2 bg-black/50 border border-white/40 overflow-hidden hover:-translate-y-1 transition ease-in-out'>
