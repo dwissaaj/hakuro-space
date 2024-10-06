@@ -11,7 +11,7 @@ interface blogCardReadyType {
 }
 export default function BlogCardReady(props: blogCardReadyType) {
   return (
-    <Card isPressable shadow="lg" className='col-span-12 lg:col-span-3 p-0 m-0 border-2 border-gray-700 hover:-translate-y-1 transition ease-in-out hover:text-primary
+    <Card isPressable shadow="lg" className=' p-0 m-0 border-2 border-gray-700 hover:-translate-y-1 transition ease-in-out hover:text-primary
             '>
               <Link href={props.link} className='flex flex-col '>
                 <CardBody className=" p-0 m-0">

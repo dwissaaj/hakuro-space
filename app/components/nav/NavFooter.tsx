@@ -8,8 +8,8 @@ export default function NavFooter() {
 
   return (
   
-      <div className="w-full flex justify-center relative
-       bottom-0 my-4">
+      <section className="w-full flex justify-center relative
+       bottom-0 p-2 ">
         <div className="flex flex-col">
         <div>
           <p className="text-xl">Hakuro Tech</p>
@@ -22,7 +22,7 @@ export default function NavFooter() {
           <Link href="/blog" color="foreground" >Blog</Link>
         </div>
         </div>
-      </div>
+      </section>
     
   );
 }

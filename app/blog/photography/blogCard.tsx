@@ -15,7 +15,7 @@ import React from 'react'
 export default function BlogCard(props: FeedType) {
   return (
 
-    <div className='w-80 bg min-h-[500px] max-h-[500px] m-2 bg-black/50 border border-white/40 overflow-hidden hover:-translate-y-1 transition ease-in-out '>
+    <div className='w-60 lgw-80 bg min-h-[500px] max-h-[500px] m-2 bg-black/50 border border-white/40 overflow-hidden hover:-translate-y-1 transition ease-in-out'>
       <div>
         <Card
           isFooterBlurred
@@ -45,7 +45,7 @@ export default function BlogCard(props: FeedType) {
           </CardFooter>
         </Card>
       </div>
-      <div className='h-full grid grid-rows-12   '>
+      <div className='h-full grid grid-rows-12  p-2 '>
        <div className='row-span-2'>
        < p className='text-white font-bold text-md lg:text-lg p-0 m-0 '>{props.title}</p>
        </div>

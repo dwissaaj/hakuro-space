@@ -37,8 +37,8 @@ export default async function Page() {
             <p className='text-2xl lg:text-5xl text-white font-bold'>Resource Center</p>
             <p className='text-white font-regular text-md lg:text-xl'>Telling stories, show my mistakes and capture moments. For now using markdown as base will update soon</p>
           </div>
-          <div className='w-full flex flex-col lg:flex-row gap-2'>
-            <div>
+          <div className='w-full flex flex-col lg:flex-row gap-2 p-2'>
+          <div>
               <Feed src='/blog/photo/resource/colbor sl20.webp' title='Review Colbor SL20B Projection' date='01 October 2024' tag='Lighting'
                 altImg='Colbor Pics' desc='New competitor for lighting, is their projection attachment really good? I bought it and will review it in here.' link='/blog/photography/review-colbor-sl20b-projection' />
             </div>

@@ -11,7 +11,7 @@ export default function BlogCardSoon(props: blogCardType) {
   return (
     <Card
       isFooterBlurred
-      className="  col-span-12 lg:col-span-3 border-2 border-black "
+      className="  border-2 border-black "
     >
       <Image
         alt={props.imageAlt}
