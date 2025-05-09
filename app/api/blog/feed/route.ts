@@ -11,6 +11,7 @@ export async function GET() {
         return NextResponse.json(result)
     } catch (error) {
         console.log(error)
+        return NextResponse.json("Error at fetching blog")
     }
     
 }
