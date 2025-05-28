@@ -1,19 +1,13 @@
-'use client'
-import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
+"use client";
+import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 export default function ErrorGate() {
   const { RiveComponent } = useRive({
-    src: '/onigiri.riv',
+    src: "/onigiri.riv",
     stateMachines: "erroractive",
-    artboard: 'Error',
+    artboard: "Error",
     autoplay: true,
-    animations: 'Error'
-
+    animations: "Error",
   });
-  
-  return (
-    <RiveComponent
-    style={{height: 500, width: 500}}
-    
-    />
-  );
+
+  return <RiveComponent style={{ height: 500, width: 500 }} />;
 }

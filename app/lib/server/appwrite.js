@@ -1,15 +1,15 @@
 // src/lib/server/appwrite.js
 
 import { Client, Account, Databases } from "node-appwrite";
-import { cookies } from "next/headers"
-export {ID} from 'node-appwrite'
+import { cookies } from "next/headers";
+export { ID } from "node-appwrite";
 
 export async function createSessionClient() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
-    .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
-    
-  const session = cookies().get("your-presence-here")
+    .setProject(process.env.NEXT_PUBLIC_SET_PROJECT);
+
+  const session = cookies().get("your-presence-here");
   if (!session || !session.value) {
     throw new Error("No session");
   }
@@ -23,16 +23,11 @@ export async function createSessionClient() {
   };
 }
 
-
-
-
-
-
 export async function createAdminClient() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
     .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
-    .setKey(process.env.NEXT_APPWRITE_KEY); 
+    .setKey(process.env.NEXT_APPWRITE_KEY);
 
   return {
     get account() {
@@ -41,16 +36,14 @@ export async function createAdminClient() {
   };
 }
 
-export async function SessionController({cookiesPresence}) {
-  const cookiesSession = cookies().get("your-presence-here")
+export async function SessionController({ cookiesPresence }) {
+  const cookiesSession = cookies().get("your-presence-here");
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
     .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
-    .setSession(`${cookiesPresence}`)
-  
-  
-  return new Account(client)
-  
+    .setSession(`${cookiesPresence}`);
+
+  return new Account(client);
 }
 // DB Server
 
@@ -58,38 +51,38 @@ export async function databaseAdmin() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
     .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
-    .setKey(process.env.NEXT_APPWRITE_KEY); 
-  const database = new Databases(client)
-  
+    .setKey(process.env.NEXT_APPWRITE_KEY);
+  const database = new Databases(client);
+
   return {
-   database
-  }
+    database,
+  };
 }
 
 // session handler user
 export async function sessionHandler() {
-  const cookiesSession = cookies().get("your-presence-here")
+  const cookiesSession = cookies().get("your-presence-here");
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
     .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
-    .setSession(`${cookiesSession}`)
-  
-    const sessions = new Account(client)
+    .setSession(`${cookiesSession}`);
+
+  const sessions = new Account(client);
   return {
-    sessions
+    sessions,
   };
 }
 
 export async function AccountHandler() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
-    .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
+    .setProject(process.env.NEXT_PUBLIC_SET_PROJECT);
 
-    const accountHandler = new Account(client)
-  
-    return {
-     accountHandler
-    }
+  const accountHandler = new Account(client);
+
+  return {
+    accountHandler,
+  };
 }
 
 export async function DatabaseHandler() {
@@ -97,9 +90,9 @@ export async function DatabaseHandler() {
     .setEndpoint(process.env.NEXT_PUBLIC_SET_END_POINT)
     .setProject(process.env.NEXT_PUBLIC_SET_PROJECT)
     .setKey(process.env.NEXT_APPWRITE_KEY);
-  const databaseHandle = new Databases(client)
- 
+  const databaseHandle = new Databases(client);
+
   return {
-    databaseHandle
-  }
+    databaseHandle,
+  };
 }
