@@ -22,12 +22,12 @@ export default function Landing() {
   }, {});
 
   return (
-   <div className="mt-8 flex flex-col items-center justify-center w-full h-screen gap-4">
-      <section className="flex flex-col gap-2 text-4xl text-center">
-        <p>This Animation built with <Link className="text-4xl underline"  href="https://rive.app/">Rive</Link></p>
+   <div className="mt-8 flex flex-col items-center justify-center w-full h-full gap-4 ">
+      <section className="w-1/2 h-1/4 flex flex-col gap-2 text-md lg:text-4xl text-center">
+        <p>This Animation built with <Link className="underline text-md lg:text-4xl"  href="https://rive.app/">Rive</Link></p>
         <h1>このアニメーションRIVE作りますた. Yeah it&apos;s disgusting design</h1>
       </section>
-      <section className="w-full h-1/2 ">
+      <section className="w-24 h-24 lg:w-96 lg:h-96">
       <SushiStore />
       </section>
       

@@ -8,8 +8,7 @@ export default function NavFooter() {
 
   return (
     <div
-      className="w-full flex justify-center relative
-       bottom-0 my-4 "
+      className="w-full flex justify-center my-4 "
     >
       <div className="flex flex-col">
         <div>
