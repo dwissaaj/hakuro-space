@@ -7,9 +7,7 @@ export default function NavFooter() {
   let year = date.getFullYear();
 
   return (
-    <div
-      className="w-full flex justify-center my-4 "
-    >
+    <div className="w-full flex justify-center my-4 ">
       <div className="flex flex-col">
         <div>
           <p className="text-xl">Hakuro Tech</p>
