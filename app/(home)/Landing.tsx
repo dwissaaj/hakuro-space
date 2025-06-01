@@ -49,7 +49,7 @@ export default function Landing() {
       opacity: 0,
       duration: 1,
       stagger: 0.05,
-      delay: 0.8,
+      delay: 2,
     });
 
     return () => {
