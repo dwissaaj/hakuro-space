@@ -1,5 +1,5 @@
-'use client'
-import React, { useEffect, useState } from 'react'
+"use client";
+import React, { useEffect, useState } from "react";
 
 export default function Kaiten() {
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,5 @@ export default function Kaiten() {
     // Cleanup function to clear the timer
     return () => clearTimeout(timer);
   }, []);
-  return (
-    <div>Kaiten</div>
-  )
+  return <div>Kaiten</div>;
 }

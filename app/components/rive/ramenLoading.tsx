@@ -1,18 +1,12 @@
-'use client'
-import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
+"use client";
+import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 export default function RamenLoader() {
   const { RiveComponent } = useRive({
-    src: '/onigiri.riv',
+    src: "/onigiri.riv",
     stateMachines: "hot",
     autoplay: true,
-    artboard: 'Ramen',
-
+    artboard: "Ramen",
   });
-  
-  return (
-    <RiveComponent
-    style={{height: 500, width: 500}}
-    
-    />
-  );
+
+  return <RiveComponent style={{ height: 500, width: 500 }} />;
 }

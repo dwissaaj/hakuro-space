@@ -8,27 +8,42 @@ import SubMenuData from "./small/SubMenuData";
 import SubMenuDesign from "./small/SubMenuDesign";
 import SubMenuContact from "./small/SubMenuContact";
 export default function MenuBurger() {
-    return (
-        <>  
-                <Accordion >
-                    <AccordionItem indicator={<PersonIcon />} key="1" aria-label="Account" title="Account">
-                        <SubMenuAccount />
-                    </AccordionItem>
-                    <AccordionItem indicator={<DataIcon />} key="3" aria-label="Data" title="Data">
-                        <SubMenuData />
-                    </AccordionItem>
-                    <AccordionItem indicator={<ComponentIcon />} key="4" aria-label="Design" title="Design">
-                        <SubMenuDesign />
-                    </AccordionItem>
-                    <AccordionItem indicator={<UilSetting />} key="5" aria-label="Contact" title="Contact">
-                        <SubMenuContact />
-                    </AccordionItem>
-                </Accordion>
-        </>
-    )
-
-
-
-
-
+  return (
+    <>
+      <Accordion>
+        <AccordionItem
+          indicator={<PersonIcon />}
+          key="1"
+          aria-label="Account"
+          title="Account"
+        >
+          <SubMenuAccount />
+        </AccordionItem>
+        <AccordionItem
+          indicator={<DataIcon />}
+          key="3"
+          aria-label="Data"
+          title="Data"
+        >
+          <SubMenuData />
+        </AccordionItem>
+        <AccordionItem
+          indicator={<ComponentIcon />}
+          key="4"
+          aria-label="Design"
+          title="Design"
+        >
+          <SubMenuDesign />
+        </AccordionItem>
+        <AccordionItem
+          indicator={<UilSetting />}
+          key="5"
+          aria-label="Contact"
+          title="Contact"
+        >
+          <SubMenuContact />
+        </AccordionItem>
+      </Accordion>
+    </>
+  );
 }

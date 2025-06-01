@@ -1,22 +1,33 @@
-'use client'
+"use client";
 import MdSubMenuAccount from "@/app/components/nav/medium/MdSubMenuAccount";
 import MdSubMenuData from "@/app/components/nav/medium/MdSubMenuData";
 import MdSubMenuDesign from "@/app/components/nav/medium/MdSubMenuDesign";
 import MdSubMenuContact from "@/app/components/nav/medium/MdSubMenuContact";
 import MenuBurger from "@/app/components/nav/MenuBurger";
-import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarItem, } from "@nextui-org/react";
-import {  useState } from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarMenuToggle,
+  NavbarContent,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarItem,
+} from "@nextui-org/react";
+import { useState } from "react";
 import { HakuroLogo } from "@/app/components/brand/HakuroLogo";
-import InputUI from "@/app/components/input/Input";
 import { SixThemeSwitcher } from "../sixThemeSwitcher";
 import Link from "next/link";
 export default function Navigations() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
-
   return (
-    <Navbar  shouldHideOnScroll position="static" maxWidth="2xl" isBordered className="py-4" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      shouldHideOnScroll={true}
+      maxWidth="2xl"
+      isBordered
+      className="py-2"
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -24,13 +35,13 @@ export default function Navigations() {
         />
         <NavbarBrand>
           <div className="hidden md:flex  space-x-4">
-          <HakuroLogo  />
+            <HakuroLogo />
           </div>
           <div>
-            <Link href={"/"} className="font-bold text-inherit">HAKURO</Link>
+            <Link href={"/"} className="font-bold text-inherit">
+              HAKURO
+            </Link>
           </div>
-          
-      
         </NavbarBrand>
       </NavbarContent>
 
@@ -39,17 +50,16 @@ export default function Navigations() {
           <InputUI />
         </NavbarItem> */}
         <div className="hidden md:flex gap-3">
-        
-        <NavbarItem>
-          <MdSubMenuDesign />
-        </NavbarItem>
-        <NavbarItem>
-          <MdSubMenuContact />
-        </NavbarItem>
+          <NavbarItem>
+            <MdSubMenuDesign />
+          </NavbarItem>
+          <NavbarItem>
+            <MdSubMenuContact />
+          </NavbarItem>
         </div>
       </NavbarContent>
       <NavbarContent justify="end">
-      <NavbarItem>
+        <NavbarItem>
           <SixThemeSwitcher />
         </NavbarItem>
         <NavbarItem className="hidden md:flex">
@@ -58,14 +68,12 @@ export default function Navigations() {
         <NavbarItem className="hidden md:flex">
           <MdSubMenuData />
         </NavbarItem>
-
       </NavbarContent>
       <NavbarMenu>
         <NavbarMenuItem>
-        <MenuBurger />
+          <MenuBurger />
         </NavbarMenuItem>
       </NavbarMenu>
-     
     </Navbar>
   );
 }

@@ -5,13 +5,9 @@ import Kaiten from "./kaiten";
 import KaitenSushi from "./kaiten";
 
 export default function page() {
-    return (
-        <div className="h-screen flex flex-cols justify-center ">
-        
-        <div className="flex items-center">
-            l;akds;lk
-        </div>
-   
-</div>
-    )
+  return (
+    <div className="h-screen flex flex-cols justify-center ">
+      <div className="flex items-center">l;akds;lk</div>
+    </div>
+  );
 }
