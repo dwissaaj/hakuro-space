@@ -66,7 +66,7 @@ export default function DesignComponent() {
           className="absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 rounded-sm overflow-hidden z-0"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-pink-300 via-sky-300 to-teal-500"></div>
-          <div className="absolute inset-0 bg-[url('/home/3.png')] opacity-20 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[url('/home/3.png')] opacity-20 pointer-evgents-none"></div>
         </div>
 
         <p
